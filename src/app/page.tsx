@@ -37,25 +37,24 @@ export default function Home() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission - using Web3Forms (free, client-side, no serverless functions)
+  // Handle form submission - using FormSubmit.co (free, no registration needed)
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('loading');
     setFormError('');
 
     try {
-      // Web3Forms API - sends email directly to bk@batkol.co.il
-      // Get your free access key at https://web3forms.com/
-      const response = await fetch('https://api.web3forms.com/submit', {
+      // FormSubmit.co - sends email directly to bk@batkol.co.il
+      // Free, no API key needed, works client-side
+      const response = await fetch('https://formsubmit.co/ajax/bk@batkol.co.il', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY',
-          subject: `פנייה חדשה מאתר בת-קול - ${formData.name}`,
-          from_name: 'אתר בת-קול',
+          _subject: `פנייה חדשה מאתר בת-קול - ${formData.name}`,
+          _template: 'table',
           name: formData.name,
           phone: formData.phone,
           email: formData.email || 'לא צוין',
@@ -66,7 +65,7 @@ export default function Home() {
       const data = await response.json();
 
       if (!data.success) {
-        throw new Error(data.message || 'שגיאה בשליחת ההודעה');
+        throw new Error('שגיאה בשליחת ההודעה');
       }
 
       setFormStatus('success');
