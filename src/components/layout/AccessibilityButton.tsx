@@ -249,7 +249,7 @@ export function AccessibilityButton() {
       {/* Accessibility Menu */}
       {isOpen && (
         <div 
-          className="fixed bottom-36 left-6 w-[340px] bg-white rounded-2xl shadow-2xl border border-neutral-200 z-50 overflow-hidden max-h-[70vh] flex flex-col"
+          className="fixed bottom-[120px] left-4 w-[300px] md:bottom-36 md:left-6 md:w-[340px] bg-white rounded-2xl shadow-2xl border border-neutral-200 z-50 overflow-hidden max-h-[70vh] flex flex-col"
           role="dialog"
           aria-label="תפריט נגישות"
           aria-modal="true"
@@ -611,7 +611,7 @@ export function AccessibilityButton() {
       {/* Main Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-24 left-6 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all cursor-pointer z-50 group ${
+        className={`fixed bottom-[72px] left-4 w-10 h-10 md:bottom-24 md:left-6 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all cursor-pointer z-50 group ${
           isOpen 
             ? 'bg-neutral-800 hover:bg-neutral-700' 
             : hasActiveSettings()
@@ -623,11 +623,11 @@ export function AccessibilityButton() {
         aria-haspopup="dialog"
       >
         {isOpen ? (
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+          <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         ) : (
-          <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 md:w-7 md:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/>
           </svg>
         )}

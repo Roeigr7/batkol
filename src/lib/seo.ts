@@ -45,7 +45,6 @@ export const siteMetadata: Metadata = {
     'מכון התקנים',
     'מוסמך ת"י',
     'תחזוקה שנתית',
-    'שירות 24/7',
   ],
   authors: [{ name: COMPANY.fullName }],
   creator: COMPANY.fullName,

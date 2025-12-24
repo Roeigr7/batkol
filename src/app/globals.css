@@ -218,6 +218,124 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* ===== Custom Scrollbar Styles ===== */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d97e00 0%, #bf1a22 100%);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e8940a 0%, #d41e27 100%);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Thin scrollbar for dropdowns and small containers */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(217, 126, 0, 0.6) 0%, rgba(191, 26, 34, 0.6) 100%);
+  border-radius: 10px;
+  border: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d97e00 0%, #bf1a22 100%);
+}
+
+/* Dropdown menu scrollbar - specific styles */
+.dropdown-scrollbar {
+  scrollbar-width: thin;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d97e00 0%, #bf1a22 100%);
+  border-radius: 10px;
+  min-height: 30px;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e8940a 0%, #d41e27 100%);
+}
+
+/* Light theme dropdown scrollbar */
+.dropdown-scrollbar-light {
+  scrollbar-color: #d97e00 rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-scrollbar-light::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Dark theme dropdown scrollbar */
+.dropdown-scrollbar-dark {
+  scrollbar-color: #d97e00 rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-scrollbar-dark::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark theme scrollbar */
+html.theme-dark ::-webkit-scrollbar-track,
+html.theme-dark.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Light theme scrollbar track */
+html.theme-light ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d97e00 transparent;
+}
+
+html.theme-dark * {
+  scrollbar-color: #d97e00 rgba(255, 255, 255, 0.03);
+}
+
+html.theme-light * {
+  scrollbar-color: #d97e00 rgba(0, 0, 0, 0.02);
+}
+
 /* Optimize images */
 img {
   content-visibility: auto;
@@ -362,6 +480,48 @@ img {
   -moz-transform: scale(1.12) translateZ(0);
   -ms-transform: scale(1.12);
   transform: scale(1.12) translateZ(0);
+}
+
+/* Product card image zoom effect - faster and brighter */
+.product-bg-image {
+  -webkit-transform: scale(1) translateZ(0);
+  -moz-transform: scale(1) translateZ(0);
+  -ms-transform: scale(1);
+  transform: scale(1) translateZ(0);
+  -webkit-transition: -webkit-transform 0.25s ease-out, opacity 0.25s ease-out;
+  -moz-transition: -moz-transform 0.25s ease-out, opacity 0.25s ease-out;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.group:hover .product-bg-image {
+  -webkit-transform: scale(1.1) translateZ(0);
+  -moz-transform: scale(1.1) translateZ(0);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1) translateZ(0);
+}
+
+/* Product card icon zoom effect - faster */
+.product-icon {
+  -webkit-transform: scale(1) translateZ(0);
+  -moz-transform: scale(1) translateZ(0);
+  -ms-transform: scale(1);
+  transform: scale(1) translateZ(0);
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  -moz-transition: -moz-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.group:hover .product-icon {
+  -webkit-transform: scale(1.15) translateZ(0);
+  -moz-transform: scale(1.15) translateZ(0);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15) translateZ(0);
 }
 
 /* ===== Comprehensive Accessibility Styles ===== */
@@ -847,3 +1007,51 @@ html.theme-light .theme-customers-section {
 }
 
 /* Footer theming is handled in the Footer component */
+
+/* Fade In Animation for product categories */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Staggered animation for product cards */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+/* Copy feedback animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInScale 0.2s ease-out forwards;
+}

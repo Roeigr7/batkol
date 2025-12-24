@@ -70,21 +70,31 @@ export function Footer() {
           {/* Services - Combined on mobile */}
           <div className="md:contents">
             <div>
-              <h4 className={`font-semibold mb-4 ${isLight ? 'text-neutral-900' : 'text-white'}`}>שירותים</h4>
+              <h4 className={`font-semibold mb-4 ${isLight ? 'text-neutral-900' : 'text-white'}`}>מוצרים</h4>
               <ul className="space-y-2 grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2">
-                {SERVICES.map((service) => (
-                  <li key={service.id}>
-                    <a 
-                      href="#solutions" 
-                      className={`hover:text-[#d97e00] transition-colors ${isLight ? 'text-neutral-600' : 'text-neutral-400'}`}
-                    >
-                      {service.title}
-                    </a>
-                  </li>
-                ))}
+                {SERVICES.map((service) => {
+                  // Map service IDs to product slugs
+                  const serviceToSlug: Record<string, string> = {
+                    security: '/products/security-cameras',
+                    pa: '/products/pa-equipment',
+                    fire: '/products/fire-detection',
+                    maintenance: '/#contact',
+                  };
+                  const href = serviceToSlug[service.id] || '/products';
+                  return (
+                    <li key={service.id}>
+                      <a 
+                        href={href}
+                        className={`hover:text-[#d97e00] transition-colors ${isLight ? 'text-neutral-600' : 'text-neutral-400'}`}
+                      >
+                        {service.title}
+                      </a>
+                    </li>
+                  );
+                })}
                 <li>
                   <a 
-                    href="#solutions" 
+                    href="/products/security-cameras" 
                     className={`hover:text-[#d97e00] transition-colors ${isLight ? 'text-neutral-600' : 'text-neutral-400'}`}
                   >
                     מצלמות אבטחה
@@ -94,7 +104,7 @@ export function Footer() {
                 {EXPERTISE_ICONS.slice(1, 5).map((item) => (
                   <li key={item.title} className="md:hidden">
                     <a 
-                      href="#solutions" 
+                      href={`/products/${item.slug}`}
                       className={`hover:text-[#d97e00] transition-colors ${isLight ? 'text-neutral-600' : 'text-neutral-400'}`}
                     >
                       {item.title}
@@ -111,7 +121,7 @@ export function Footer() {
                 {EXPERTISE_ICONS.slice(1, 5).map((item) => (
                   <li key={item.title}>
                     <a 
-                      href="#solutions" 
+                      href={`/products/${item.slug}`}
                       className={`hover:text-[#d97e00] transition-colors ${isLight ? 'text-neutral-600' : 'text-neutral-400'}`}
                     >
                       {item.title}

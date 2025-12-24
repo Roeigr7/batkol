@@ -22,7 +22,7 @@ export function ExpertiseSlider() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden" aria-labelledby="expertise-title">
+    <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden" aria-labelledby="expertise-title">
       {/* Beautiful Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900" aria-hidden="true"></div>
       
@@ -43,7 +43,7 @@ export function ExpertiseSlider() {
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#d97e00] to-transparent opacity-60" aria-hidden="true"></div>
 
       {/* Content */}
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 mb-12">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mb-8 sm:mb-10 md:mb-12">
         <SectionHeader
           badge="תחומי התמחות"
           title="המומחיות שלנו לשירותכם"
@@ -57,16 +57,15 @@ export function ExpertiseSlider() {
         {/* Navigation Arrow - Left */}
         <button 
           onClick={handlePrev}
-          className="absolute left-0 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 backdrop-blur-sm cursor-pointer"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 backdrop-blur-sm cursor-pointer"
           style={{
-            top: '59px',
             background: 'linear-gradient(135deg, rgba(217,126,0,0.3) 0%, rgba(191,26,34,0.3) 100%)',
             border: '1px solid rgba(217,126,0,0.5)',
             boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
           }}
           aria-label="הקודם"
         >
-          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -74,26 +73,25 @@ export function ExpertiseSlider() {
         {/* Navigation Arrow - Right */}
         <button 
           onClick={handleNext}
-          className="absolute right-0 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 backdrop-blur-sm cursor-pointer"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 backdrop-blur-sm cursor-pointer"
           style={{
-            top: '59px',
             background: 'linear-gradient(135deg, rgba(217,126,0,0.3) 0%, rgba(191,26,34,0.3) 100%)',
             border: '1px solid rgba(217,126,0,0.5)',
             boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
           }}
           aria-label="הבא"
         >
-          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         {/* Slider Container */}
-        <div className="mx-12 sm:mx-16 overflow-hidden">
+        <div className="mx-10 sm:mx-14 md:mx-16 overflow-hidden">
           <Swiper
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
             modules={[Navigation, Autoplay]}
-            spaceBetween={20}
+            spaceBetween={8}
             slidesPerView={2}
             speed={600}
             autoplay={{
@@ -102,10 +100,10 @@ export function ExpertiseSlider() {
             }}
             loop={true}
             breakpoints={{
-              480: { slidesPerView: 3, spaceBetween: 24 },
-              640: { slidesPerView: 4, spaceBetween: 24 },
-              768: { slidesPerView: 5, spaceBetween: 28 },
-              1024: { slidesPerView: 6, spaceBetween: 32 },
+              400: { slidesPerView: 3, spaceBetween: 12 },
+              540: { slidesPerView: 4, spaceBetween: 16 },
+              768: { slidesPerView: 5, spaceBetween: 20 },
+              1024: { slidesPerView: 6, spaceBetween: 28 },
             }}
             className="expertise-slider"
           >
