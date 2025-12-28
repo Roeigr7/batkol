@@ -1,17 +1,20 @@
-# Robots.txt for batkol.co.il
+# Robots.txt for www.batkol.co.il
 # Allow all search engines to crawl the site
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://batkol.co.il/sitemap.xml
+Sitemap: https://www.batkol.co.il/sitemap.xml
 
-# Disallow admin/api routes if any
-Disallow: /api/
-Disallow: /_next/
-Disallow: /private/
+# Disallow Next.js internal routes
+Disallow: /_next/static/
+Disallow: /_next/image/
 
-# Crawl delay (optional - be nice to servers)
+# Allow important assets
+Allow: /_next/static/css/
+Allow: /_next/static/js/
+Allow: /_next/static/media/
+
+# Crawl delay (be nice to servers)
 Crawl-delay: 1
-

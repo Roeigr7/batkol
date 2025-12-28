@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { COMPANY } from './constants';
 
-const siteUrl = 'https://batkol.co.il';
+const siteUrl = 'https://www.batkol.co.il';
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -63,10 +63,11 @@ export const siteMetadata: Metadata = {
     description: COMPANY.description,
     images: [
       {
-        url: '/og-image.png',
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: `${COMPANY.name} - ${COMPANY.tagline}`,
+        type: 'image/png',
       },
     ],
   },
@@ -74,7 +75,15 @@ export const siteMetadata: Metadata = {
     card: 'summary_large_image',
     title: `${COMPANY.name} | מערכות מתח נמוך, אבטחה וגילוי אש`,
     description: COMPANY.description,
-    images: ['/og-image.png'],
+    images: [`${siteUrl}/og-image.png`],
+    creator: '@batkol',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.png',
   },
   robots: {
     index: true,

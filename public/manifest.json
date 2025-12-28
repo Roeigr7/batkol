@@ -3,16 +3,30 @@
   "short_name": "בת-קול",
   "description": "מומחים במערכות מתח נמוך, אבטחה וגילוי אש באזור באר שבע והדרום מאז 1982. מוסמכי מכון התקנים הישראלי.",
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
   "background_color": "#171717",
   "theme_color": "#d97e00",
   "orientation": "portrait-primary",
+  "scope": "/",
   "icons": [
     {
-      "src": "/logo-dark.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "lang": "he",
@@ -25,10 +39,9 @@
       "description": "צור קשר עם בת-קול"
     },
     {
-      "name": "שירותים",
-      "url": "/#solutions",
-      "description": "צפה בשירותים שלנו"
+      "name": "מוצרים",
+      "url": "/products",
+      "description": "צפה במוצרים שלנו"
     }
   ]
 }
-
