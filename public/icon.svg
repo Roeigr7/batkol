@@ -1,11 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#d97e00"/>
-      <stop offset="100%" style="stop-color:#bf1a22"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="96" fill="url(#grad)"/>
-  <text x="256" y="340" font-family="Arial, sans-serif" font-size="280" font-weight="bold" fill="white" text-anchor="middle">בק</text>
+  <rect width="512" height="512" fill="#ffffff"/>
+  
+  <!-- B letter -->
+  <path d="M80 100 h70 c50 0 80 25 80 70 c0 30 -15 50 -40 60 c35 10 55 35 55 75 c0 55 -40 90 -100 90 H80 V100z M140 210 c25 0 40 -15 40 -35 c0 -20 -15 -35 -40 -35 h-20 v70 h20z M145 355 c30 0 50 -18 50 -45 c0 -27 -20 -45 -50 -45 h-25 v90 h25z" fill="#1a1a1a"/>
+  
+  <!-- K letter -->
+  <path d="M280 100 h45 v120 l90 -120 h55 l-95 120 l105 175 h-60 l-80 -140 l-15 20 v120 h-45 V100z" fill="#1a1a1a"/>
+  
+  <!-- Sound waves -->
+  <path d="M385 180 Q450 220 450 280 Q450 340 385 380" stroke="#d97e00" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <path d="M405 150 Q490 210 490 280 Q490 350 405 410" stroke="#bf1a22" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M420 125 Q520 200 520 280 Q520 360 420 435" stroke="#1a1a1a" stroke-width="10" fill="none" stroke-linecap="round"/>
 </svg>
-
