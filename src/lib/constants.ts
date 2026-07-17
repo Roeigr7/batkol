@@ -88,8 +88,6 @@ export const EXPERTISE_ICONS = [
     bg: '/slides/motion-sensor.jpg', 
     description: 'מערכות אזעקה חכמות עם גלאי תנועה מתקדמים, מגנטים לדלתות וחלונות וחיבור ישיר למוקד אבטחה.',
     subtitle: 'מערכות אזעקה מתקדמות להגנה מקסימלית',
-    contentImage: '/products/burglar-alarm-risco.jpg',
-    contentImageTitle: 'מערכת אזעקה RISCO LightSYS2',
     contentText: `מערכות אזעקה לכל מטרה
 
 חברת בת-קול עוסקת בשיווק והתקנה של מערכות אזעקה בבתים, בעסקים ובמוסדות.
